@@ -1,0 +1,1 @@
+var emailApp = angular.module('emailApp', ['ngAnimate', 'ngMessages', 'ngMaterial', 'ngRoute']);

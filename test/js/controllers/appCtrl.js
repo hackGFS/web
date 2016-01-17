@@ -1,5 +1,5 @@
 emailApp
-  .controller('sideNavCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+  .controller('sideNavCtrl', function ($scope, $timeout, $mdSidenav, $log, $resource) {
     $scope.toggleLeft = buildDelayedToggler('left');
     $scope.toggleRight = buildToggler('right');
     $scope.isOpenRight = function(){

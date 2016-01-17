@@ -1,90 +1,46 @@
 <!DOCTYPE html>
-<html ng-app="emailApp">
+<html ng-app="webApp">
 <head>
 	<title></title>
-
-	<!-- Import AngularJS Material CSS -->
-	<link rel="stylesheet" type="text/css" href="node_modules/angular-material/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="css/paper.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+	<script src="js/jQuery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="node_modules/angular/angular.js"></script>
+	<script src="node_modules/angular-route/angular-route.min.js"></script>
+	<script src="js/modules/baseRoute.js"></script>
+	<script src="js/modules/citrus.js"></script>
+	<script src="js/app.js"></script>
+	<script src="routes.js"></script>
+	<script src="js/controllers/main.js"></script>
+	<script src="js/controllers/auth.js"></script>
 </head>
-<body>
+<body style="background:#26c6da">
 
-	<div layout="row" layout-xs="column" style="height:100%">
-		<div ng-controller="sideNavCtrl" layout="column" style="height:100%" ng-cloak>
-		  <section layout="row" flex>
-		    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
-		      <md-toolbar class="md-theme-indigo">
-		        <h1 class="md-toolbar-tools">hackGFS</h1>
-		      </md-toolbar>
-		      <md-content layout-padding ng-controller="LeftCtrl">
-		        <md-button ng-click="close()" class="md-primary" hide-gt-md>
-		          Close Sidenav Left
-		        </md-button>
-		        <p hide-md show-gt-md>
-		          This sidenav is locked open on your device. To go back to the default behavior,
-		          narrow your display.
-		        </p>
-		      </md-content>
-		    </md-sidenav>
-		  </section>
+	<div class="overlay" style="display:none">
+	</div>
+
+<div class="container-fluid" ng-controller="MainController" style="padding-top:100px;">
+
+	<div ng-view></div>
+
+	<div class="col-md-4 col-md-offset-4 toast t-error">
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<b>Whoops! - </b>{{errorMessage}}
+			</div>
 		</div>
 	</div>
 
-	<div ng-controller="sideNavListCtrl" ng-cloak>
-	  <md-content>
-	    <md-list>
-	      <md-list-item class="md-2-line" ng-repeat="item in menuItems">
-	        <a href="{{item.route}}" style="text-decoration:none" class="md-list-item-text" layout="column">
-	          <h3>{{ item.name }}</h3>
-	        </a>
-	      </md-list-item>
-	    </md-list>
-	  </md-content>
+	<div class="col-md-4 col-md-offset-4 toast t-success">
+		<div class="panel panel-success">
+			<div class="panel-heading">
+				<b>Great! - </b>{{successMessage}}
+			</div>
+		</div>
 	</div>
+	
+</div>
 
-
-
-
-
-
-
-
-
-
-	<!-- Import AngularJS -->
-	<script src="node_modules/angular/angular.min.js"></script>
-
-	<!-- Import AngularJS Animations -->
-	<script src="node_modules/angular-animate/angular-animate.min.js"></script>
-
-	<!-- Import AngularJS ARIA Support -->
-  	<script src="node_modules/angular-aria/angular-aria.min.js"></script>
-
-  	<!-- Import AngularJS Error/Warning Messages -->
-  	<script src="node_modules/angular-messages/angular-messages.min.js"></script>
-
-  	<!-- Import AngularJS Material JS -->
-  	<script src="node_modules/angular-material/angular-material.min.js"></script>
-
-  	<!-- Import AngularJS -->
-	<script src="node_modules/angular-route/angular-route.min.js"></script>
-
-	<!--
-	/*
-    |
-    | Dependency Injection
-    |
-    |
-    | All dependencies must be injected BEFORE this comment.
-    | Once app.js is used, we can no longer inject dependcies
-    | into the app itself. 
-    |
-    */
-    -->
-
-  	<!-- Import our AngularJS Application (emailApp) -->
-	<script src="js/app.js"></script>
-
-	<!-- Default Code for AngularJS Material Design Components -->
-	<script src="js/controllers/appCtrl.js"></script>
 </body>
 </html>

@@ -1,1 +1,1 @@
-var emailApp = angular.module('emailApp', ['ngAnimate', 'ngMessages', 'ngMaterial', 'ngRoute']);
+var webApp = angular.module("webApp", ['ngRoute', 'baseRoute', 'citrusService']);

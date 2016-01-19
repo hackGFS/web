@@ -1,5 +1,5 @@
 webApp
-	.controller('MainController', function($scope){
+	.controller('MainController', function($scope, baseRouter, $http, $location){
 
 		$scope.errorMessage = null;
 
@@ -8,6 +8,27 @@ webApp
 			$scope.errorMessage = message;
 
 		}
+
+		$scope.setLoggedIn = function(value){
+
+			url = baseRouter.route('auth/check');
+
+			$http.get(url).then(
+				function(response){
+
+					$scope.loggedIn = response.data.data;
+
+					if(!$scope.loggedIn){
+
+						$location.url('/');
+
+					}
+
+				});
+
+		}
+
+		$scope.setLoggedIn();
 
 		$scope.setSuccess = function(message){
 

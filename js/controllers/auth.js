@@ -3,6 +3,8 @@ webApp
 		
 		$scope.formData = {};
 
+		$scope.loggedIn = false;
+
 		$scope.login = function()
 		{
 			url = baseRouter.route('auth/login');
@@ -18,7 +20,11 @@ webApp
 
 					if(Citrus.decide(response)){
 
-							
+						$scope.setLoggedIn();
+
+
+
+						$location.url('home')						
 
 					} else {
 

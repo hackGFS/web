@@ -1,15 +1,25 @@
 webApp
-	.controller('DashController', function($scope, $http, baseRouter, Citrus){
+	.controller('DashController', function($scope, $http, baseRouter, Citrus, $interval){
 
-		url = baseRouter.route('mail/all');
+		$scope.load = function(){
 
-		$http.get(url).then(
-			function(response){
+			url = baseRouter.route('mail/all');
 
-				$scope.emails = response.data.data;
+			$http.get(url).then(
+				function(response){
 
-				console.log($scope.emails);
+					$scope.emails = response.data.data;
 
-			});
+				});
+
+		}
+
+		$scope.load();
+
+		$interval(function(){
+
+			$scope.load();
+
+		}, 10000);
 
 	});

@@ -16,13 +16,11 @@ webApp
 
 					$scope.hideLoading();
 
-					$scope.formData = {};
-
 					if(Citrus.decide(response)){
 
 						$scope.setLoggedIn();
 
-
+						$scope.formData = {};
 
 						$location.url('home')						
 
@@ -51,8 +49,6 @@ webApp
 
 					$scope.hideLoading();
 
-					$scope.formData = {};
-
 					if(Citrus.decide(response)){
 
 						$scope.setSuccess('Your account has been registered! Please check your email for an activation link!');
@@ -60,6 +56,8 @@ webApp
 						Citrus.success();
 
 					} else {
+
+						$scope.formData = {};
 
 						$scope.setError(response.data.error);
 

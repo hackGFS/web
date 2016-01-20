@@ -21,6 +21,11 @@ webApp
 	    		templateUrl: 'views/mail/sponsor.html',
 	    		controller: 'SponsorController',
 	 		})
+
+	 		.when('/mail/:mailId', {
+	    		templateUrl: 'views/mail/detail.html',
+	    		controller: 'MailDetailController',
+	 		})
 	 	;
 
 	});

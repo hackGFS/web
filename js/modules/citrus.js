@@ -6,30 +6,36 @@ angular.module('citrusService', []).factory('Citrus', function(){
 
 			var data = data.data;
 
-			angular.element('.t-error')
+			angular.element('.t-error').delay('100')
 
 				.css('display', 'block')
 
 				.animate({
 				'margin-bottom':'0px',
 				'opacity':'1',
-			}, 700);
+			}, 600);
 
-			angular.element('.t-error').delay('7000').fadeOut('fast', function(){
-				
-				angular.element('.toast')
-
-					.css('margin-bottom', '-200px')
-					.css('opacity', '.1');
-			});
+			//sanitizer.hideError(5000);
 
 			return data.error;
 
 		},
 
+		hideError: function(t){
+
+			angular.element('.t-error').delay(t).fadeOut('fast', function(){
+				
+				angular.element('.t-error')
+
+					.css('margin-bottom', '-200px')
+					.css('opacity', '.1');
+			});
+
+		},
+
 		success: function(){
 			
-			angular.element('.t-success')
+			angular.element('.t-success').delay('100')
 
 				.css('display', 'block')
 
@@ -38,9 +44,9 @@ angular.module('citrusService', []).factory('Citrus', function(){
 				'opacity':'1',
 			}, 700);
 
-			angular.element('.t-success').delay('7000').fadeOut('fast', function(){
+			angular.element('.t-success').delay('3000').fadeOut('fast', function(){
 				
-				angular.element('.toast')
+				angular.element('.t-success')
 
 					.css('margin-bottom', '-200px')
 					.css('opacity', '.1');

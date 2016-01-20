@@ -1,11 +1,39 @@
 webApp
-	.controller('MainController', function($scope, baseRouter, $http, $location){
+	.controller('MainController', function($scope, baseRouter, $http, $location, Citrus){
 
 		$scope.errorMessage = null;
 
 		$scope.setError = function(message){
 
 			$scope.errorMessage = message;
+
+		}
+
+		$scope.logout = function()
+		{
+
+			url = baseRouter.route('auth/logout');
+
+			$scope.showLoading();
+
+			$http.get(url).then(
+				function(response){
+
+					$scope.hideLoading();
+
+					if(Citrus.decide(response)){
+
+						$scope.setLoggedIn();
+
+						$location.url('/')						
+
+					} else {
+
+						$scope.setError(response.data.error);
+
+					}
+
+				})
 
 		}
 
@@ -39,6 +67,8 @@ webApp
 		$scope.showLoading = function(){
 
 			angular.element('.overlay').fadeIn('fast', function(){});
+
+			Citrus.hideError(0);
 
 		}
 

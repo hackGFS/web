@@ -50,6 +50,10 @@ webApp
 
 						$location.url('/');
 
+					} else {
+
+						$location.url('/home');
+
 					}
 
 				});

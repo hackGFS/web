@@ -9,7 +9,7 @@ webApp
 
 			url = baseRouter.route('mail/section');
 
-			url = url + '?section=' + section + '&name=' + encodeURI($scope.formData.name);
+			url = url + '?section=' + section + '&name=' + encodeURI($scope.formData.company);
 
 			$http.get(url).then(
 				function(response){

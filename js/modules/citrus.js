@@ -44,7 +44,7 @@ angular.module('citrusService', []).factory('Citrus', function(){
 				'opacity':'1',
 			}, 700);
 
-			angular.element('.t-success').delay('3000').fadeOut('fast', function(){
+			angular.element('.t-success').delay('8000').fadeOut('fast', function(){
 				
 				angular.element('.t-success')
 

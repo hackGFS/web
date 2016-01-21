@@ -5,6 +5,70 @@ webApp
 
 		$scope.formData.section = {};
 
+		var quotes = [];
+
+		quotes = [
+			  {
+			    "content": "They don't want us to send emails - send anotha one!",
+			  },
+
+			  {
+			    "content": "Anotha one!",
+			  },
+
+			  {
+			    "content": "They don't want us to have sponsors.",
+			  },
+
+			  {
+			    "content": "Why not send anotha one?",
+			  },
+
+			  {
+			    "content": "Send anotha one!",
+			  },
+
+			  {
+			    "content": "The key to success is sponsors.",
+			  },
+
+			  {
+			    "content": "The key to success is persistence - anotha one!",
+			  },
+
+			  {
+			    "content": "They don't want you to win that Xbox One",
+			  },
+
+			  {
+			    "content": "They don't want us to send emails",
+			  },
+
+			  {
+			    "content": "I appreciate that - you loyal.",
+			  },
+
+			  {
+			    "content": "Don't ever play yourself.",
+			  },
+
+			  {
+			    "content": "Walk with me to the path of more sponsors.",
+			  },
+
+			  {
+			    "content": "Bless up - don't ever send to yourself",
+			  },
+
+			  {
+			    "content": "Some sites can't handle emails. I can.",
+			  },
+
+			  {
+			    "content": "Anotha one. Anotha one! ANOTHA ONE!",
+			  }
+		];
+
 		$scope.getSection = function(section){
 
 			url = baseRouter.route('mail/section');
@@ -45,7 +109,11 @@ webApp
 
 					if(Citrus.decide(response)){
 
-						$scope.setSuccess('Your email has been successfully sent! Why not send another?');
+						max = quotes.length;
+
+						index = Math.floor(Math.random() * (max-1));
+
+						$scope.setSuccess(quotes[index].content);
 
 						Citrus.success();
 

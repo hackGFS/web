@@ -1,4 +1,28 @@
-<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1" style="padding-top:50px;">
+<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-2" id="guide">
+	<div class="panel panel-warning">
+		<div class="panel-heading">
+			<h3 class="panel-title">Guidelines <a class="pull-right" id="closeGuide" href="#/sponsor">X</a></h3> 
+			<script type="text/javascript">
+			$('#closeGuide').click(function(){
+				$('#guide').fadeOut('medium', function(){});
+			})
+			</script>
+		</div>
+		<div class="panel-body">
+			<p>
+				<b>Before sending this email make sure that:</b>
+				<ol>
+					<li>You know field the company is in</li>
+					<li>You have a reason the company would want to sponsor hackGFS</li>
+					<li>You've spelled everything correctly!</li>
+				</ol>
+			</p>
+		</div>
+		
+	</div>
+</div>
+
+<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-2">
 	<div class="panel">
 		<div class="panel-body">
 			<h4>Send an email to a Sponsor</h4>
@@ -30,7 +54,7 @@
 
 				<div class="row">
 					<div class="col-md-12">
-						<span>Please mark all that apply to <b>{{formData.company}}</b></span>
+						<span>Please mark all that you think would appeal to <b>{{formData.company}}</b></span>
 						<div class="checkbox">
 	                        <label>
 	                        	<input type="checkbox" ng-model="formData.section.experimenting"> Experimenting
@@ -86,6 +110,9 @@
 		
 	</div>
 </div>
+
+
+
 
 <div class="modal" id="sectionModal">
   <div class="modal-dialog">

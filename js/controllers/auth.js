@@ -68,3 +68,37 @@ webApp
 			
 		}
 	})
+
+	.controller('ActivateController', function($scope, $http, baseRouter, Citrus, $location, $routeParams){
+
+		//console.log($routeParams.activationCode);
+
+		$scope.showLoading();
+
+		var code = $routeParams.activationCode;
+
+		url = baseRouter.route('auth/activate/'+code);
+
+		$http.get(url).then(
+			function(response){
+
+				$scope.hideLoading();
+
+				$scope.setLoggedIn();
+
+
+				if(Citrus.decide(response))
+				{
+
+					$scope.setSuccess('Your account has been activated! Let the games begin!');
+
+					Citrus.success();
+
+				} else{
+
+					$scope.setError(response.data.error);
+
+				}
+			});
+
+	});

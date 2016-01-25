@@ -7,6 +7,11 @@ webApp
 	    		controller: 'AuthController',
 	  		})
 
+	  		.when('/activate/:activationCode', {
+	    		templateUrl: 'views/auth/activate.html',
+	    		controller: 'ActivateController',
+	  		})
+
 	   		.when('/register', {
 	    		templateUrl: 'views/auth/register.html',
 	    		controller: 'AuthController',
@@ -20,6 +25,11 @@ webApp
 	 		.when('/sponsor', {
 	    		templateUrl: 'views/mail/sponsor.html',
 	    		controller: 'SponsorController',
+	 		})
+
+	 		.when('/rank', {
+	    		templateUrl: 'views/rank/rank.html',
+	    		controller: 'LeaderboardController',
 	 		})
 
 	 		.when('/mail/:mailId', {

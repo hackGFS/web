@@ -23,7 +23,9 @@ webApp
 
 					if(Citrus.decide(response)){
 
-						$scope.setLoggedIn();						
+						$scope.setLoggedIn();
+
+						$location.url('/');						
 
 					} else {
 
@@ -46,7 +48,7 @@ webApp
 
 					if(!$scope.loggedIn){
 
-						$location.url('/');
+						//$location.url('/');
 
 					} else{
 

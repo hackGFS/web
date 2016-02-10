@@ -12,9 +12,19 @@ webApp
 	    		controller: 'ActivateController',
 	  		})
 
+	  		.when('/reset/:resetCode', {
+	    		templateUrl: 'views/auth/resetPassword.html',
+	    		controller: 'ResetController',
+	  		})
+
 	   		.when('/register', {
 	    		templateUrl: 'views/auth/register.html',
 	    		controller: 'AuthController',
+	 		})
+
+	 		.when('/reset', {
+	    		templateUrl: 'views/auth/reset.html',
+	    		controller: 'ResetController',
 	 		})
 
 	 		.when('/home', {

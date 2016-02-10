@@ -101,4 +101,77 @@ webApp
 				}
 			});
 
+	})
+
+	.controller('ResetController', function($scope, $http, baseRouter, Citrus, $location, $routeParams){
+
+		$scope.formData = {};
+
+		$scope.requestReset = function(){
+
+			url = baseRouter.route('user/reset/request');
+
+			$scope.showLoading();
+
+
+			$http.post(url, $scope.formData).then(
+				function(response){
+
+					$scope.hideLoading();
+
+					if(Citrus.decide(response)){
+
+						$scope.formData = {};
+
+						$scope.setSuccess('Please check your email to finish resetting your password');
+
+						Citrus.success();
+
+						$location.url('/');					
+
+					} else {
+
+						$scope.setError(response.data.error);
+
+					}
+
+				}
+			);
+
+		}
+
+		$scope.resetPassword = function(){
+
+			url = baseRouter.route('user/reset');
+
+			$scope.showLoading();
+
+			$scope.formData.code = $routeParams.resetCode;
+
+			$http.post(url, $scope.formData).then(
+				function(response){
+
+					$scope.hideLoading();
+
+					if(Citrus.decide(response)){
+
+						$scope.formData = {};
+
+						$scope.setSuccess('Your password has been reset');
+
+						Citrus.success();
+
+						$location.url('/');					
+
+					} else {
+
+						$scope.setError(response.data.error);
+
+					}
+
+				}
+			);
+
+		}
+
 	});

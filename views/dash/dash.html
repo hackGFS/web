@@ -1,9 +1,18 @@
 <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 card-dash" ng-repeat="email in emails">
+	
 	<div class="panel panel-success">
+		
 		<div class="panel-heading" style="padding-top:15px;padding-bottom:15px">
-			<h3 class="panel-title"><i class="ion ion-email pull-right" style="font-size:13pt"></i>{{email.user.first_name}} sent an email to {{email.company}}</h3>
-			<script type="text/javascript">
-			</script>
+			
+			<h3 class="panel-title">
+				
+				<a href="#/home" class="ion ion-ios-trash pull-right delete-m" ng-click="delete(email.id)" style="font-size:16pt;padding-left: 5px"></a>
+
+				<i class="ion ion-email pull-right" style="font-size:16pt"></i>
+				{{email.user.first_name}} sent an email to {{email.company}}
+
+			</h3>
+			
 		</div>
 		
 	</div>

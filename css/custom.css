@@ -21,3 +21,7 @@
 .card-dash{
 	padding-top: 13px;
 }
+
+.delete-m:hover{
+	color: #ea494e;
+}

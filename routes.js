@@ -42,6 +42,11 @@ webApp
 	    		controller: 'LeaderboardController',
 	 		})
 
+	 		.when('/search', {
+	    		templateUrl: 'views/dash/dash.html',
+	    		controller: 'SearchController',
+	 		})
+
 	 		.when('/mail/:mailId', {
 	    		templateUrl: 'views/mail/detail.html',
 	    		controller: 'MailDetailController',

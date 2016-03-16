@@ -11,6 +11,7 @@
 	<script src="node_modules/angular-route/angular-route.min.js"></script>
 	<script src="js/modules/baseRoute.js"></script>
 	<script src="js/modules/citrus.js"></script>
+	<script src="js/modules/mail.js"></script>
 	<script src="js/app.js"></script>
 	<script src="routes.js"></script>
 	<script src="js/controllers/main.js"></script>
@@ -18,6 +19,7 @@
 	<script src="js/controllers/dash.js"></script>
 	<script src="js/controllers/mail.js"></script>
 	<script src="js/controllers/rank.js"></script>
+	<script src="js/controllers/search.js"></script>
 </head>
 <body style="background:#eceff1" ng-controller="MainController">
 
@@ -52,18 +54,18 @@
 	            <li><a href="#">One more separated link</a></li>
 	          </ul>
 	        </li>
-	      </ul>
-	      <form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
-	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
-	      </form>-->
+	      </ul>-->
 	      <ul class="nav navbar-nav navbar-right">
 	      	<li><a href="#/rank">Leaderboard</a></li>
 	        <li><a href="#/sponsor">Send an Email</a></li>
 	        <li><a href="#" ng-click="logout()">Logout</a></li>
 	      </ul>
+	      <!--<form ng-controller="SearchController" class="navbar-form navbar-right" ng-click="searchView()" role="search">
+	        <div class="form-group">
+	          <input type="text" class="form-control" id="searchbar" ng-change="searchMail()" ng-model="searchData.q" placeholder="Search">
+	        </div>
+	        <button type="submit" class="btn btn-sm btn-default">Submit</button>
+	      </form>-->
 	    </div>
 	  </div>
 	</nav>

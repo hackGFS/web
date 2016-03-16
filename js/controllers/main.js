@@ -1,5 +1,5 @@
 webApp
-	.controller('MainController', function($scope, baseRouter, $http, $location, Citrus){
+	.controller('MainController', function($scope, baseRouter, $http, $location, Citrus, Mail){
 
 		$scope.errorMessage = null;
 
@@ -84,6 +84,12 @@ webApp
 		$scope.hideLoading = function(){
 
 			angular.element('.overlay').fadeOut('fast', function(){});
+
+		}
+
+		$scope.searchView = function(){
+
+			$location.url('/search');		
 
 		}
 

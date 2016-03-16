@@ -1,1 +1,1 @@
-var webApp = angular.module("webApp", ['ngRoute', 'baseRoute', 'citrusService']);
+var webApp = angular.module("webApp", ['ngRoute', 'baseRoute', 'citrusService', 'mailMan']);

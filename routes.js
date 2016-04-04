@@ -43,7 +43,7 @@ webApp
 	 		})
 
 	 		.when('/search', {
-	    		templateUrl: 'views/dash/dash.html',
+	    		templateUrl: 'views/search/search.html',
 	    		controller: 'SearchController',
 	 		})
 

@@ -27,7 +27,7 @@
 	</div>
 
 	<nav ng-if="loggedIn == true" class="navbar navbar-inverse navbar-fixed-top">
-	  <div class="container-fluid">
+	  <div class="container">
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
 	        <span class="sr-only">Toggle navigation</span>
@@ -56,16 +56,12 @@
 	        </li>
 	      </ul>-->
 	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#/search">Search</a></li>
 	      	<li><a href="#/rank">Leaderboard</a></li>
 	        <li><a href="#/sponsor">Send an Email</a></li>
 	        <li><a href="#" ng-click="logout()">Logout</a></li>
 	      </ul>
-	      <!--<form ng-controller="SearchController" class="navbar-form navbar-right" ng-click="searchView()" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" id="searchbar" ng-change="searchMail()" ng-model="searchData.q" placeholder="Search">
-	        </div>
-	        <button type="submit" class="btn btn-sm btn-default">Submit</button>
-	      </form>-->
+	      
 	    </div>
 	  </div>
 	</nav>

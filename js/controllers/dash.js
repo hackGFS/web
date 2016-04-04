@@ -10,7 +10,7 @@ webApp
 
 					$scope.emails = response.data.data;
 
-					//console.log($scope.emails);
+					console.log($scope.emails);
 
 				});
 

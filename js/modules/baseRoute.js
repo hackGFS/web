@@ -8,7 +8,7 @@ angular.module('baseRoute', []).factory('baseRouter', function($location){
 
 			} else {
 
-				url = "http://club.hackgfs.io/api/public/"+string;
+				url = "https://club.hackgfs.io/api/public/"+string;
 
 			}
 

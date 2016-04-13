@@ -1,31 +1,7 @@
-<div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-2" id="guide">
-	<div class="panel panel-warning">
-		<div class="panel-heading">
-			<h3 class="panel-title">Guidelines <a class="pull-right" id="closeGuide" href="#/sponsor">X</a></h3> 
-			<script type="text/javascript">
-			$('#closeGuide').click(function(){
-				$('#guide').fadeOut('medium', function(){});
-			})
-			</script>
-		</div>
-		<div class="panel-body">
-			<p>
-				<b>Before sending this email make sure that:</b>
-				<ol>
-					<li>You know field that the company is in</li>
-					<li>You have thought of a reason why the company would want to sponsor hackGFS</li>
-					<li>You've spelled everything correctly!</li>
-				</ol>
-			</p>
-		</div>
-		
-	</div>
-</div>
-
 <div class="col-lg-6 col-md-6 col-sm-8 col-xs-12 col-lg-offset-3 col-md-offset-3 col-sm-offset-2">
 	<div class="panel">
 		<div class="panel-body">
-			<h4>Send an email to a Sponsor</h4>
+			<h4>Send an email to a School</h4>
 			<hr>
 			<form ng-submit="send()">
 
@@ -39,7 +15,7 @@
 
 					<div class="col-md-4">
 						<div class="form-group">
-						  <label class="control-label" for="companyInput">Company Name</label>
+						  <label class="control-label" for="companyInput">School Name</label>
 						  <input class="form-control" id="companyInput" type="text" placeholder="ex. Google" ng-model="formData.company" required>
 						</div>
 					</div>
@@ -50,57 +26,7 @@
 						  <input class="form-control" id="nameInput" type="text" placeholder="ex. John Appleseed" ng-model="formData.name">
 						</div>
 					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-12">
-						<span>Please mark all that you think would appeal to <b>{{formData.company}}</b></span>
-						<div class="checkbox">
-	                        <label>
-	                        	<input type="checkbox" ng-model="formData.section.experimenting"> Experimenting
-	                        </label>
-	                        <a href="#/sponsor" ng-click="getSection('experimenting')">Preview This Section</a>
-	                    </div>
-
-	                    <div class="checkbox">
-	                        <label>
-	                        	<input type="checkbox" ng-model="formData.section.marketing"> Marketing
-	                        </label>
-	                        <a href="#/sponsor" ng-click="getSection('marketing')">Preview This Section</a>
-	                    </div>
-
-	                    <div class="checkbox">
-	                        <label>
-	                        	<input type="checkbox" ng-model="formData.section.api"> API
-	                        </label>
-	                        <a href="#/sponsor" ng-click="getSection('api')">Preview This Section</a>
-	                    </div>
-
-	                    <div class="checkbox">
-	                        <label>
-	                        	<input type="checkbox" ng-model="formData.section.vc"> Venture Capitalist
-	                        </label>
-	                        <a href="#/sponsor" ng-click="getSection('vc')">Preview This Section</a>
-	                    </div>
-
-	                    <div class="checkbox">
-	                        <label>
-	                        	<input type="checkbox" ng-model="formData.section.charity"> Charity
-	                        </label>
-	                        <a href="#/sponsor" ng-click="getSection('charity')">Preview This Section</a>
-	                    </div>
-
-	                    <div class="checkbox">
-	                        <label>
-	                        	<input type="checkbox" ng-model="formData.section.exposure"> Exposure
-	                        </label>
-	                        <a href="#/sponsor" ng-click="getSection('exposure')">Preview This Section</a>
-	                    </div>
-
-					</div>
-				</div>
-
-				
+				</div>				
 				
 				<br>
 				<center><input class="btn btn-primary" type="submit" value="Send"></center>

@@ -7,6 +7,11 @@ webApp
 	    		controller: 'AuthController',
 	  		})
 
+	  		.when('/user/:userId', {
+	    		templateUrl: 'views/user/user.html',
+	    		controller: 'UserController',
+	  		})
+
 	  		.when('/activate/:activationCode', {
 	    		templateUrl: 'views/auth/activate.html',
 	    		controller: 'ActivateController',

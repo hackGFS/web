@@ -14,7 +14,9 @@ webApp
 
 					$scope.emails = response.data.data;
 
-					console.log($scope.emails);
+					$scope.path = $location.path();
+
+					//console.log($scope.emails);
 
 				});
 		}

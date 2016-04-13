@@ -12,7 +12,7 @@
 			
 			<h3 class="panel-title">
 				
-				<a href="#/home" class="ion ion-ios-trash pull-right delete-m" ng-click="delete(email.id)" style="font-size:16pt;padding-left: 5px"></a>
+				<a ng-href="#{{path}}" class="ion ion-ios-trash pull-right delete-m" ng-click="delete(email.id)" style="font-size:16pt;padding-left: 5px"></a>
 
 				<i class="ion ion-email pull-right" style="font-size:16pt"></i>
 				{{email.user.first_name}} sent an email to {{email.company}}

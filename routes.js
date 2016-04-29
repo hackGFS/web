@@ -42,6 +42,11 @@ webApp
 	    		controller: 'SponsorController',
 	 		})
 
+	 		.when('/custom', {
+	    		templateUrl: 'views/mail/custom.html',
+	    		controller: 'CustomController',
+	 		})
+
 	 		.when('/rank', {
 	    		templateUrl: 'views/rank/rank.html',
 	    		controller: 'LeaderboardController',

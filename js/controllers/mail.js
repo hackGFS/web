@@ -133,7 +133,63 @@ webApp
 
 	})
 
-	.controller('MailDetailController', function($scope, $http, baseRouter, Citrus, $location){
+	.controller('MailDetailController', function($scope, $http, baseRouter, Citrus, $location, $routeParams, Mail){
+
+		Mailman = new Mail($routeParams.mailId);
+
+		var data = Mailman.getMail().then(
+
+	    	function(response){
+
+		        console.log(response);
+
+		        $scope.message = response.data.data;
+
+		        $scope.message.body = $scope.message.body.replace('<br><br>', '\n\n');
+
+	    	}
+
+	    );
+
+	})
 
 
-	});;
+	.controller('CustomController', function($scope, $http, baseRouter, Citrus, $location, $routeParams, Mail){
+
+		$scope.formData = {};
+
+		$scope.report = false;
+
+		$scope.sendMail = function(){
+
+			url = baseRouter.route('mail/custom');
+
+			$scope.showLoading();
+
+			console.log($scope.formData);
+
+			$http.post(url, $scope.formData).then(
+				function(response){
+
+					$scope.hideLoading();
+
+					if(Citrus.decide(response)){
+
+						$scope.report = true;
+
+						$scope.reports = response.data.data.report;
+
+						$scope.total = response.data.data.total;
+
+					} else {
+
+						$scope.setError(response.data.error);
+
+					}
+
+				});
+
+		}
+
+	});
+

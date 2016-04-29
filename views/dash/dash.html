@@ -9,7 +9,7 @@
 				<a href="#/home" class="ion ion-ios-trash pull-right delete-m" ng-click="delete(email.id)" style="font-size:16pt;padding-left: 5px"></a>
 
 				<i class="ion ion-email pull-right" style="font-size:16pt"></i>
-				{{email.user.first_name}} sent an email to {{email.company}}
+				<a href="#/mail/{{email.id}}">{{email.user.first_name}} sent an email to {{email.company}}</a>
 
 			</h3>
 			

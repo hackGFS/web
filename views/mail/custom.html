@@ -1,0 +1,56 @@
+<div ng-hide="report" class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1" style="padding-top:25px;">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+			<h1 class="panel-title"><b>Custom Message</b> - To All Schools</h1>
+		</div>
+		<form class="panel-body" ng-submit="sendMail()">
+
+			<div class="form-group">
+                <label class="control-label" for="mailSubject">Email Subject</label>
+                <input class="form-control input-lg" type="text" ng-model="formData.subject"  placeholder="ex. Registration Update" id="mailSubject" required>
+            </div>
+			<br>
+			<div class="form-group">
+                <label class="control-label" for="mailBody">Email Body</label>
+                <textarea class="form-control" rows="10" type="text" ng-model="formData.body" style="resize: none;" placeholder="Your email here..." id="mailBody" required></textarea>
+            </div>
+            <center><input class="btn btn-success" value="Submit" type="submit"></input></center>
+		</form>
+		
+	</div>
+</div>
+
+
+<div ng-show="report" class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 card-dash">
+	
+	<div class="panel panel-success">
+		<div class="panel-heading">
+		
+			<h3 class="panel-title">Report</h3>
+			
+		</div>
+
+		<div class="panel-body" style="padding: 0px!important">
+
+			<table class="table table-hover">
+				<thead>
+					<th>#</th>
+					<th>School</th>
+					<th>Name</th>
+					<th>Status</th>
+				</thead>
+				<tbody>
+					<tr ng-repeat="report in reports">
+						<td>{{$index + 1}}</td>
+						<td>{{report.school}}</td>
+						<td>{{report.name}}</td>
+						<td>{{report.status}}</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div>
+		
+	</div>
+</div>
+
